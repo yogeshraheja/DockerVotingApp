@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  vote:
+    image: yogeshraheja/vote:v1
+    ports:
+      - "81:80"
+    networks:
+      - appnet
+  redis:
+    image: yogeshraheja/redis:v1
+    networks:
+      - appnet
+  db:
+    image: yogeshraheja/db:v1
+    networks:
+      - appnet
+  worker:
+    image: yogeshraheja/worker:v1
+    networks:
+      - appnet
+  result:
+    image: yogeshraheja/result:v1
+    ports:
+      - "82:80"
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
