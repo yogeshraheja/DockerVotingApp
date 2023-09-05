@@ -36,6 +36,6 @@ docker container run -itd --net=appnet --name=worker worker:v1
 
 docker container run -itd --net=appnet --name=db yogeshraheja/db:v1
 
-docker container run -itd --net=appnet --name=vote -p 82:80 result:v1
+docker container run -itd --net=appnet --name=result -p 82:80 result:v1
 
 Now go to browser with your Host IP and access the Vote Front End at port 81 and Result Front End at Port 82.
